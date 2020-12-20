@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container box">
         <h1 class="title is-3">Контакты</h1>
         <div class="columns is-multiline">
             <div class="column is-one-third">
