@@ -1,3 +1,17 @@
+var fs = require('fs')
+var path = require('path')
+
+var routes = function (dir, main_route='') {
+  var contentDir = path.join(__dirname, `/content/${dir}`)
+  var contentFiles = fs.readdirSync(contentDir)
+  return contentFiles.map(filename => {
+    return {
+      route: `${main_route}/${path.basename(filename, '.md')}`,
+      payload: fs.readFileSync(path.join(contentDir, filename))
+    }
+  })
+}
+
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
@@ -60,7 +74,9 @@ export default {
     },
   },
 
-  // generate: {
-  //   fallback: true
-  // }
+  generate: {
+    // routes: routes('articles', '/news'),
+    routes: [...routes('pages'), ...routes('articles', '/news')],
+    fallback: true
+  }
 }
