@@ -2,6 +2,12 @@
   import hello from '../content/main/wellcome.md'
  
   export default {
+    data() {
+      return {
+        isActive: false,
+        showNavbar: true
+      }
+    },
     computed: {
       hello() {
         return hello
@@ -23,13 +29,13 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="container">
         <div class="navbar-brand">
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
+          <a :aria-expanded="isActive" :class="{ 'is-active': isActive }" role="button" class="navbar-burger" aria-label="menu" data-target="collapse" @click="isActive = !isActive" >
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </a>
         </div>
-        <div id="navbarBasic" class="navbar-menu">
+        <div id="collapse" :class="{ 'is-active': isActive }" class="navbar-menu is-paddingless" >
           <div class="navbar-start">
             <a class="navbar-item" href="/">
               Главная

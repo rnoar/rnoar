@@ -15,10 +15,16 @@
 
 <template>
   <div class="container">
-    <div class="buttons are-medium">
-      <button class="button">Вступить в ВРО «РНОАР»</button>
-      <button class="button">Часто задаваемые вопросы</button>
-      <button class="button">Методические материалы</button>
+    <div class="buttons are-medium columns">
+      <div class="column is-one-third">
+        <button class="button is-fullwidth">Вступить в ВРО «РНОАР»</button>
+      </div>
+      <div class="column is-one-third">
+        <button class="button is-fullwidth">Часто задаваемые вопросы</button>
+      </div>
+      <div class="column is-one-third">
+        <button class="button is-fullwidth">Методические материалы</button>
+      </div>
     </div>
     <div class="section">
       <div id="app" class="row columns is-multiline">
