@@ -15,17 +15,7 @@
 
 <template>
   <div class="container">
-    <div class="navbar">
-      <div class="column is-one-third-desktop">
-        <button class="button is-fullwidth">Вступить в ВРО «РНОАР»</button>
-      </div>
-      <div class="column is-one-third-desktop">
-        <button class="button is-fullwidth">Часто задаваемые вопросы</button>
-      </div>
-      <div class="column is-one-third-desktop">
-        <button class="button is-fullwidth">Методические материалы</button>
-      </div>
-    </div>
+    <Mainbar />
     <div class="section">
       <div id="app" class="row columns is-multiline">
         <div v-for="card in articles" :key="card.id" class="column is-12">

@@ -13,7 +13,7 @@ export default {
           this.docs = _docs
           return
         }
-        this.docs = _docs.filter(doc => doc.name.match(searchQuery))
+        this.docs = _docs.filter(doc => doc.name.toLowerCase().match(searchQuery.toLowerCase()))
       }
     },
 }
