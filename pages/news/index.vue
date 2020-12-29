@@ -16,7 +16,10 @@
       return { nextPage, articles, pageNo }
     },
     methods: {
-        formatDate(date) {
+        formatDate(date, article_date) {
+          if (article_date) {
+            date = article_date
+          }
           const options = { year: 'numeric', month: 'long', day: 'numeric' }
           return new Date(date).toLocaleDateString('ru', options)
         }
@@ -43,7 +46,7 @@
                     {{card.description}}
                   </p>
                 </div>
-                <tt>{{ formatDate(card.createdAt) }}</tt>
+                <tt>{{ formatDate(card.createdAt, card.date) }}</tt>
               </div>
             </article>
           </div>

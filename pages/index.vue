@@ -1,11 +1,14 @@
 <script>
   export default {
     async asyncData({ $content, params }) {
-      const articles = await $content('articles').where({ main: { $eq: 1 } }).sortBy('createdAt', 'desc').limit(5).fetch()
+      const articles = await $content('articles').where({ main: { $eq: 1 } }).sortBy('date', 'desc').limit(5).fetch()
       return { articles }
     },
     methods: {
-        formatDate(date) {
+        formatDate(date, article_date) {
+          if (article_date) {
+            date = article_date
+          }
           const options = { year: 'numeric', month: 'long', day: 'numeric' }
           return new Date(date).toLocaleDateString('ru', options)
         }
@@ -33,7 +36,7 @@
                     {{card.description}}
                   </p>
                 </div>
-                <tt>{{ formatDate(card.createdAt) }}</tt>
+                <tt>{{ formatDate(card.createdAt, card.date) }}</tt>
               </div>
             </article>
           </div>
