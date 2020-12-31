@@ -19,8 +19,12 @@
 
 <template>
   <article class="box content is-size-5 is-family-sans-serif">
-    <h1>{{ article.title }}</h1>
-    <img :src="article.img" :alt="article.alt" />
+    <div class="is-justify-content-center is-flex">
+      <h1 class="title is-3">{{ article.title }}</h1>    
+    </div>
+    <div class="is-justify-content-center is-flex">
+      <img :src="article.img" :alt="article.alt" />
+    </div>
     <div>
       <tt>{{ formatDate(article.createdAt, article.date) }}</tt>
     </div>

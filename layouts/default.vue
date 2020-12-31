@@ -120,7 +120,7 @@
 					<div class="box">
             <img src="/photo.png">
             <div>
-              <div v-html="hello"></div>
+              <div v-html="hello" />
             </div>
           </div>          
 				</div>

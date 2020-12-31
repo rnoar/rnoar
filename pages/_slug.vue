@@ -15,7 +15,7 @@
 </script>
 
 <template>
-  <article class="box content">
+  <article class="box content is-size-5 is-family-sans-serif">
     <nuxt-content :document="article" />
   </article>
 </template>
