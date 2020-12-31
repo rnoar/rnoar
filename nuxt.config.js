@@ -22,6 +22,11 @@ export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'РНОАР',
+    script: [
+      {
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-6MSWZRHBDD'
+      }
+    ],
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
