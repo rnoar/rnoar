@@ -4,7 +4,9 @@ from os.path import isfile, join
 import re
 import json
 
+to_dir = "docs"
 mypath = r'D:\web\rnoar\static\buf'
+
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 
 from transliterate import translit, get_available_language_codes
@@ -23,6 +25,8 @@ for ex in ["pdf", "doc", "rtf"]:
 for old_name, new_name in zip(onlyfiles, urls):
     os.rename(os.path.join(mypath, old_name), os.path.join(mypath, new_name))
 
-urls = [f"/docs/{url}" for url in urls]
+urls = [f"/{to_dir}/{url}" for url in urls]
 
 print(json.dumps([{'name': name, 'url': url} for name, url in list(zip(names, urls))], ensure_ascii=False))
+
+# %%
